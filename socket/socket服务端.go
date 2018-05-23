@@ -24,7 +24,7 @@ TCP/IP
 CS模型（C：client S：server）
 */
 func main() {
-	
+
 	//监听tcp
 	listener, err := net.Listen("tcp", ":8080")
 
@@ -62,6 +62,7 @@ func main() {
 		//打印结果
 		fmt.Println(string(buf[:length]))
 
+		//向客户端发送数据
 		conn.Write([]byte("this is server"))
 
 		//关闭连接
